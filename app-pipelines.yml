@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: linux-latest
+  vmImage: Linux-latest
 
 steps:
 - task: UseDotNet@2
