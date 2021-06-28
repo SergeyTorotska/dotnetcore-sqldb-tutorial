@@ -10,10 +10,6 @@ steps:
     command: 'build'
     projects: 'https://github.com/SergeyTorotska/dotnetcore-sqldb-tutorial.git'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -21,3 +17,7 @@ steps:
     appType: 'webApp'
     WebAppName: 'webSiteyn34m33a3duyg'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
