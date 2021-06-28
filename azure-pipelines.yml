@@ -12,4 +12,4 @@ steps:
     azureSubscription: 'Azure subscription 1(f016713d-47fd-4917-a2c7-c2805377c59c)'
     appType: 'webApp'
     WebAppName: 'webSiteyn34m33a3duyg'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: 'https://github.com/SergeyTorotska/dotnetcore-sqldb-tutorial'
