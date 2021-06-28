@@ -5,11 +5,19 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'https://github.com/SergeyTorotska/dotnetcore-sqldb-tutorial.git'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(f016713d-47fd-4917-a2c7-c2805377c59c)'
+    azureSubscription: 'Azure subscription 1 (f016713d-47fd-4917-a2c7-c2805377c59c)'
     appType: 'webApp'
     WebAppName: 'webSiteyn34m33a3duyg'
-    packageForLinux: 'https://github.com/SergeyTorotska/dotnetcore-sqldb-tutorial'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
